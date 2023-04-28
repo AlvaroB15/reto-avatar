@@ -1,56 +1,68 @@
 <div *ngIf="dataMovieList">
 
-    <div class="container-dialog">
-        <h2 class="center">Informacion</h2>
-        <hr>
-        <div class="text-center">
-            <p><b>Title: </b>{{dataMovieList.title}}</p>
-            <p><b>Duration: </b>{{dataMovieList.duration}}</p>
-            <p><b>Year: </b>{{dataMovieList.year|date}}</p>
-            <p><b>Synopsis: </b>{{dataMovieList.synopsis}}</p>
-
-            <p><b>Duration: </b>{{dataMovieList.duration}}</p>
-            <div>
-                <p><b>Titles: </b></p>
-                <ul *ngFor="let title of dataMovieList.titles">
-                    <li> - {{title.type}}: {{title.title}}</li>
-                </ul>
-            </div>
-            <p><b>Studio: </b></p>
+    <mat-dialog-content>
+        <div class="container-dialog">
+            <h2 class="center">Informacion</h2>
+            <hr>
             <div class="text-center">
-                <mat-chip *ngFor="let studio of dataMovieList.studios">
-                    <a [href]="studio.url" target="_blank">{{studio.name}}</a>
-                </mat-chip>
+                <p><b>Title: </b>{{dataMovieList.title}}</p>
+                <p><b>Duration: </b>{{dataMovieList.duration}}</p>
+                <p><b>Year: </b>{{dataMovieList.year|date}}</p>
+                <p><b>Synopsis: </b>{{dataMovieList.synopsis}}</p>
+
+                <p><b>Duration: </b>{{dataMovieList.duration}}</p>
+                <div>
+                    <p><b>Titles: </b></p>
+                    <ul *ngFor="let title of dataMovieList.titles">
+                        <li> - {{title.type}}: {{title.title}}</li>
+                    </ul>
+                </div>
+                <p><b>Studio: </b></p>
+                <div class="text-center">
+                    <mat-chip *ngFor="let studio of dataMovieList.studios">
+                        <a [href]="studio.url" target="_blank">{{studio.name}}</a>
+                    </mat-chip>
+                </div>
+
             </div>
 
+            <div class="center">
+                <button mat-button (click)="cerrar()" color="warn">Cerrar</button>
+            </div>
         </div>
-
-        <div class="center">
-            <button mat-button (click)="cerrar()" color="warn">Cerrar</button>
-        </div>
-    </div>
+    </mat-dialog-content>
 
 </div>
 
-<div *ngIf="dataMovieCharacter">
-    <div class="container-dialog">
-        <h2 class="center">Informacion</h2>
-        <hr>
-        <div class="text-center">
-            <p><b>Name: </b>{{dataMovieCharacter.name}}</p>
-            <p><b>Kanji: </b>{{dataMovieCharacter.name_kanji}}</p>
-            <p><b>About: </b>{{dataMovieCharacter.about}}</p>
+<div *ngIf="dataMoviesCharacters">
 
-            <div>
-                <p><b>Nicknames: </b></p>
-                <ul *ngFor="let nick of dataMovieCharacter.nicknames">
-                    <li> - {{nick}}</li>
-                </ul>
+    <mat-dialog-content>
+        <div class="container-dialog">
+            <h2 class="center">Informacion</h2>
+            <hr>
+            <div class="text-center">
+                <p><b>Name: </b>{{dataMoviesCharacters.character.name}}</p>
+                <p><b>Role: </b>{{dataMoviesCharacters.role}}</p>
+                <div>
+                    <p><b>Voice Actors: </b></p>
+                    <ul *ngFor="let voice of dataMoviesCharacters.voice_actors">
+                        <li> - {{voice.language}}: {{voice.person.name}}</li>
+                        <div class="flex-center-image">
+                            <img *ngIf="voice.person.images.jpg"
+                                 mat-card-image
+                                 appImageBroken
+                                 [customImg]="'./assets/images/Image_not_available.png'"
+                                 [src]="voice.person.images.jpg.image_url"
+                                 [alt]="voice.person.name">
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="center">
+                <button mat-button (click)="cerrar()" color="warn">Cerrar</button>
             </div>
         </div>
+    </mat-dialog-content>
 
-        <div class="center">
-            <button mat-button (click)="cerrar()" color="warn">Cerrar</button>
-        </div>
-    </div>
 </div>

@@ -38,6 +38,22 @@
     text-align: center;
 }
 
+/* COLOR SCROllBAR */
+::-webkit-scrollbar {
+    width: 9px;
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.9);
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c2185b;
+    background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent)
+}
+
 /* RESPONSIVE */
 @media screen and (max-width: 768px) {
     .container-flex {

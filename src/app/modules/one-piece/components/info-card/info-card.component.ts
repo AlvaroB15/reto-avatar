@@ -20,14 +20,23 @@ export class InfoCardComponent {
     constructor(public dialog: MatDialog, private router: Router) {
     }
 
-    showInfoFullMovieList(){
-
-    }
-
-    showInfoFull(dataCard: DataMovieList | DataMoviesCharacters) {
+    showInfoFullMoviesCharacters(dataCard: DataMoviesCharacters) {
         const dialog = this.dialog.open(ShowInfoModalComponent, {
             width: '700px',
-            data: {...dataCard}
+            data: {...dataCard},
+            autoFocus: false,
+        });
+
+        dialog.afterClosed().subscribe(result => {
+            console.log(`Dialog result: `);
+        });
+    }
+
+    showInfoFullMovieList(dataCard: DataMovieList) {
+        const dialog = this.dialog.open(ShowInfoModalComponent, {
+            width: '700px',
+            data: {...dataCard},
+            autoFocus: false,
         });
 
         dialog.afterClosed().subscribe(result => {

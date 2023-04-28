@@ -1,7 +1,7 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DataMovieList} from "../../../../core/models/MovieList.model";
-import {DataCharacterFull} from "../../../../core/models/CharacterFull.model";
+import {DataMoviesCharacters} from "../../../../core/models/MoviesCharacters.model";
 
 @Component({
     selector: 'app-show-info-modal',
@@ -10,9 +10,14 @@ import {DataCharacterFull} from "../../../../core/models/CharacterFull.model";
 })
 export class ShowInfoModalComponent {
 
+    dataMovieList!: DataMovieList;
+    dataMoviesCharacters!: DataMoviesCharacters;
+
     constructor(private dialogRef: MatDialogRef<ShowInfoModalComponent>,
-                @Inject(MAT_DIALOG_DATA) public dataMovieList: DataMovieList,
-                @Inject(MAT_DIALOG_DATA) public dataMovieCharacter: DataCharacterFull) {
+                @Inject(MAT_DIALOG_DATA) public data: any) {
+
+        data.voice_actors ? this.dataMoviesCharacters = data : this.dataMovieList = data;
+
     }
 
     cerrar() {
