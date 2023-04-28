@@ -111,19 +111,18 @@
 <div *ngIf="datamangaTab">
 
     <mat-card-header class="flex-center-image">
-        <mat-card-title>Name: {{dataAnimeTab.anime.title}}</mat-card-title>
+        <mat-card-title>Name: {{datamangaTab.manga.title}}</mat-card-title>
     </mat-card-header>
 
     <div class="text-center mb-2">
-        <img *ngIf="dataAnimeTab.anime.images.jpg"
+        <img *ngIf="datamangaTab.manga.images.jpg"
              mat-card-image
              appImageBroken
              [customImg]="'./assets/images/Image_not_available.png'"
-             [src]="dataAnimeTab.anime.images.jpg.image_url"
-             [alt]="dataAnimeTab.anime.title">
-        <p>Role: {{dataAnimeTab.role}}</p>
-        <a [href]="dataAnimeTab.anime.url" target="_blank">More Info</a>
+             [src]="datamangaTab.manga.images.jpg.image_url"
+             [alt]="datamangaTab.manga.title">
+        <p>Role: {{datamangaTab.role}}</p>
+        <a [href]="datamangaTab.manga.url" target="_blank">More Info</a>
     </div>
-
 
 </div>
