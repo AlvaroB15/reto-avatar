@@ -1,0 +1,69 @@
+<div *ngIf="dataMovieList">
+
+    <mat-card-header class="flex-center-image">
+        <mat-card-title>{{dataMovieList.title}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <div class="flex-center-image">
+            <img *ngIf="dataMovieList.images"
+                 mat-card-image
+                 appImageBroken
+                 [customImg]="'./assets/images/Image_not_available.png'"
+                 [src]="dataMovieList.images.jpg.image_url"
+                 [alt]="dataMovieList.title">
+        </div>
+
+        <div *ngIf="dataMovieList.synopsis">
+            <div *ngIf="!showMoreText">
+                <div *ngIf="dataMovieList.synopsis">
+                    <p><b>Synopsis: </b>{{dataMovieList.synopsis | slice:0:50}} ...</p>
+                    <span class="show-more" (click)="showMore()">Show more</span>
+                </div>
+            </div>
+            <div *ngIf="showMoreText">
+                <div *ngIf="dataMovieList.synopsis">
+                    <p><b>Synopsis: </b>{{dataMovieList.synopsis}} </p>
+                    <span class="show-more" (click)="showMore()">Show less</span>
+                </div>
+            </div>
+        </div>
+
+    </mat-card-content>
+
+    <mat-card-actions class="flex-center-image">
+
+        <button mat-button color="accent" (click)="showInfoFull(dataMovieList)">Detalles</button>
+        <button mat-button color="warn" (click)="goToMovieCharacters(dataMovieList)">Movie Characters</button>
+
+    </mat-card-actions>
+</div>
+
+<div *ngIf="dataMoviesCharacters">
+
+    <mat-card-header class="flex-center-image">
+        <mat-card-title>{{dataMoviesCharacters.character.name}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div class="flex-center-image">
+            <img *ngIf="dataMoviesCharacters.character.images"
+                 mat-card-image
+                 appImageBroken
+                 [customImg]="'./assets/images/Image_not_available.png'"
+                 [src]="dataMoviesCharacters.character.images.jpg.image_url"
+                 [alt]="dataMoviesCharacters.character.name">
+        </div>
+    </mat-card-content>
+
+    <mat-card-actions class="flex-center-image">
+
+        <button mat-button color="accent" (click)="showInfoFull(dataMoviesCharacters)">Detalles</button>
+        <button mat-button color="warn" (click)="goToCharactersDetail(dataMoviesCharacters.character.mal_id)">
+            Movie Characters
+        </button>
+
+    </mat-card-actions>
+
+</div>

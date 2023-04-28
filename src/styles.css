@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*@import "~animate.css/animate.min.css";*/
+
+* {
+    /*border: 1px solid red;*/
+    box-sizing: border-box;
+}
+
+.container-flex {
+    display: grid;
+    grid-template-rows:    auto auto;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 1em;
+    column-gap: 1em;
+    margin: 20px;
+
+    animation: fadeIn;
+    animation-duration: 2s;
+}
+
+.container, .col-flex-2 {
+    margin: 0 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    animation: fadeIn;
+    animation-duration: 2s;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .container-flex {
+        display: grid;
+        grid-template-rows:    auto auto;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 1em;
+        column-gap: 1em;
+    }
+}

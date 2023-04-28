@@ -1,0 +1,8 @@
+<h1 class="text-center">{{titleMovieList}} - Characters</h1>
+
+<div *ngIf="dataMoviesCharacters" class="container-flex">
+    <mat-card class="card-main" *ngFor="let character of dataMoviesCharacters.data; let i = index">
+        <app-info-card [dataMoviesCharacters]="character"></app-info-card>
+    </mat-card>
+</div>
+<h2 *ngIf="hayData" class="text-center">Aun no hay registros</h2>

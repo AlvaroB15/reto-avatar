@@ -1,0 +1,29 @@
+a {
+    color: #ff1493;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-center-image {
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+}
+
+img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-a {
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+.show-more {
+    color: #c2c2c2;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
