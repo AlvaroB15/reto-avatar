@@ -6,7 +6,6 @@
     width: 80%;
 }
 
-/* RESPONSIVE */
-@media screen and (max-width: 768px) {
-
+img{
+    margin-top: 5px;
 }

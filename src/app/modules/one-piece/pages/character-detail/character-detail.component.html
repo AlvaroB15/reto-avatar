@@ -2,17 +2,8 @@
     <mat-tab-group>
 
         <mat-tab label="Info">
-            <div>
-                <p>Name: {{dataCharacterDetail.data.name}}</p>
-                <p>Kanji: {{dataCharacterDetail.data.name_kanji}}</p>
-                <ul *ngFor="let nick of dataCharacterDetail.data.nicknames">
-                    <li>- {{nick}}</li>
-                </ul>
 
-                <p>About:</p>
-                <div *ngFor="let data of arrayDataAbout">
-                    <p> - {{data}}</p>
-                </div>
+            <div class="container-info">
 
                 <div class="flex-center-image">
                     <img *ngIf="dataCharacterDetail.data.images"
@@ -21,6 +12,21 @@
                          [customImg]="'./assets/images/Image_not_available.png'"
                          [src]="dataCharacterDetail.data.images.jpg.image_url"
                          [alt]="dataCharacterDetail.data.name">
+                </div>
+
+                <div class="text-center">
+                    <p><b>Name: </b>: {{dataCharacterDetail.data.name}}</p>
+                    <p><b>Kanji: </b>: {{dataCharacterDetail.data.name_kanji}}</p>
+                    <p><b>Nicknames: </b></p>
+                    <ul *ngFor="let nick of dataCharacterDetail.data.nicknames">
+                        <li>- {{nick}}</li>
+                    </ul>
+
+                    <p><b>About:</b></p>
+                    <div *ngFor="let data of arrayDataAbout">
+                        <p> - {{data}}</p>
+                    </div>
+
                 </div>
 
             </div>
