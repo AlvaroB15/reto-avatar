@@ -1,7 +1,3 @@
-<!--<p>movies-list works!</p>-->
-<!--<span>{{dataMovieList|json}}</span>-->
-
-
 <div *ngIf="dataMovieList" class="container-flex">
     <mat-card class="card-main" *ngFor="let movie of dataMovieList.data; let i = index">
         <app-info-card [dataMovieList]="movie"></app-info-card>

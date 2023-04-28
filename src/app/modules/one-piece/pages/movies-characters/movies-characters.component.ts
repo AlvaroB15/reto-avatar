@@ -20,7 +20,6 @@ export class MoviesCharactersComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // this.activatedRoute.params.subscribe(({id}) => console.log(id));
         this.onePieceService.getMoviesCharacters(this.activatedRoute.snapshot.params['id']).subscribe((resp) => {
             console.log(resp)
             this.dataMoviesCharacters = resp;
