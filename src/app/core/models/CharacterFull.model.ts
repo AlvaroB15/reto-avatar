@@ -1,35 +1,35 @@
 export interface CharacterFull {
-    data?: DataCharacterFull;
+    data: DataCharacterFull;
 }
 
 export interface DataCharacterFull {
-    mal_id:     number;
-    url:        string;
-    images:     DataImages;
-    name:       string;
+    mal_id: number;
+    url: string;
+    images: DataImages;
+    name: string;
     name_kanji: string;
-    nicknames:  string[];
-    favorites:  number;
-    about:      string;
-    anime:      AnimeElement[];
-    manga:      Manga[];
-    voices:     Voice[];
+    nicknames: string[];
+    favorites: number;
+    about: string;
+    anime: AnimeElement[];
+    manga: Manga[];
+    voices: Voice[];
 }
 
 export interface AnimeElement {
-    role:  Role;
+    role: Role;
     anime: MangaClass;
 }
 
 export interface MangaClass {
     mal_id: number;
-    url:    string;
+    url: string;
     images: { [key: string]: Image };
-    title:  string;
+    title: string;
 }
 
 export interface Image {
-    image_url:       string;
+    image_url: string;
     small_image_url: string;
     large_image_url: string;
 }
@@ -40,7 +40,7 @@ export enum Role {
 }
 
 export interface DataImages {
-    jpg:  Jpg;
+    jpg: Jpg;
     webp: Webp;
 }
 
@@ -49,25 +49,25 @@ export interface Jpg {
 }
 
 export interface Webp {
-    image_url:       string;
+    image_url: string;
     small_image_url: string;
 }
 
 export interface Manga {
-    role:  Role;
+    role: Role;
     manga: MangaClass;
 }
 
 export interface Voice {
-    person:   Person;
+    person: Person;
     language: string;
 }
 
 export interface Person {
     mal_id: number;
-    url:    string;
+    url: string;
     images: PersonImages;
-    name:   string;
+    name: string;
 }
 
 export interface PersonImages {

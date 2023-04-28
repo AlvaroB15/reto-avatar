@@ -3,8 +3,8 @@ import {MatDialog} from "@angular/material/dialog";
 import {DataMovieList} from "../../../../core/models/MovieList.model";
 import {DataMoviesCharacters} from "../../../../core/models/MoviesCharacters.model";
 import {ShowInfoModalComponent} from "../show-info-modal/show-info-modal.component";
-import {ActivatedRoute, Router} from "@angular/router";
-import {take} from "rxjs";
+import {Router} from "@angular/router";
+import {Voice} from "../../../../core/models/CharacterFull.model";
 
 @Component({
     selector: 'app-info-card',
@@ -15,6 +15,8 @@ export class InfoCardComponent {
 
     @Input('dataMovieList') dataMovieList?: DataMovieList;
     @Input('dataMoviesCharacters') dataMoviesCharacters?: DataMoviesCharacters;
+    @Input('dataVoice') dataVoice?: Voice;
+
     showMoreText: boolean = false;
 
     constructor(public dialog: MatDialog, private router: Router) {

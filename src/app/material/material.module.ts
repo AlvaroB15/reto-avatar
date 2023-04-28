@@ -11,6 +11,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatChipsModule} from '@angular/material/chips';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MatChipsModule} from '@angular/material/chips';
         MatFormFieldModule,
         MatInputModule,
         MatSelectModule,
-        MatChipsModule
+        MatChipsModule,
+        MatTabsModule
     ]
 })
 export class MaterialModule {

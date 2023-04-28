@@ -5,12 +5,6 @@ a {
     padding: 0;
 }
 
-.flex-center-image {
-    display: flex;
-    justify-content: center;
-    column-gap: 50px;
-}
-
 img {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -26,4 +20,8 @@ img {
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
+}
+
+.mb-2 {
+    margin-bottom: 15px;
 }

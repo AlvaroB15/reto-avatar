@@ -11,15 +11,18 @@ import {CharacterFull} from "../../../../core/models/CharacterFull.model";
 })
 export class CharacterDetailComponent implements OnInit {
 
-    dataCharacterDetail: CharacterFull = {};
+    dataCharacterDetail!: CharacterFull;
+    arrayDataAbout: String[];
 
     constructor(private onePieceService: OnePieceService, private activatedRoute: ActivatedRoute) {
+        this.arrayDataAbout = [];
     }
 
     ngOnInit(): void {
         this.onePieceService.getCharacterDetail(this.activatedRoute.snapshot.params['id']).subscribe((resp) => {
-            console.log(resp)
             this.dataCharacterDetail = resp;
+            const dataArray: string[] = this.dataCharacterDetail.data.about.split("\n");
+            this.arrayDataAbout = dataArray.filter(data => data != "");
         });
     }
 

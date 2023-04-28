@@ -61,9 +61,25 @@
 
         <button mat-button color="accent" (click)="showInfoFullMoviesCharacters(dataMoviesCharacters)">Detalles</button>
         <button mat-button color="warn" (click)="goToCharactersDetail(dataMoviesCharacters.character.mal_id)">
-            Movie Characters
+            Character Detail
         </button>
 
     </mat-card-actions>
+
+</div>
+
+<div *ngIf="dataVoice">
+
+    <div class="text-center mb-2">
+        <img *ngIf="dataVoice.person.images.jpg"
+             mat-card-image
+             appImageBroken
+             [customImg]="'./assets/images/Image_not_available.png'"
+             [src]="dataVoice.person.images.jpg.image_url"
+             [alt]="dataVoice.person.name">
+        <p>Name: {{dataVoice.person.name}}</p>
+        <p>Language: {{dataVoice.language}}</p>
+        <a [href]="dataVoice.person.url" target="_blank">More Info</a>
+    </div>
 
 </div>
