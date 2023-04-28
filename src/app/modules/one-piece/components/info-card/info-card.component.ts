@@ -4,7 +4,7 @@ import {DataMovieList} from "../../../../core/models/MovieList.model";
 import {DataMoviesCharacters} from "../../../../core/models/MoviesCharacters.model";
 import {ShowInfoModalComponent} from "../show-info-modal/show-info-modal.component";
 import {Router} from "@angular/router";
-import {Voice} from "../../../../core/models/CharacterFull.model";
+import {AnimeElement, Manga, Voice} from "../../../../core/models/CharacterFull.model";
 
 @Component({
     selector: 'app-info-card',
@@ -15,7 +15,9 @@ export class InfoCardComponent {
 
     @Input('dataMovieList') dataMovieList?: DataMovieList;
     @Input('dataMoviesCharacters') dataMoviesCharacters?: DataMoviesCharacters;
-    @Input('dataVoice') dataVoice?: Voice;
+    @Input('dataVoiceTab') dataVoiceTab?: Voice;
+    @Input('dataAnimeTab') dataAnimeTab?: AnimeElement;
+    @Input('datamangaTab') datamangaTab?: Manga;
 
     showMoreText: boolean = false;
 

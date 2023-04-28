@@ -24,8 +24,13 @@ export interface AnimeElement {
 export interface MangaClass {
     mal_id: number;
     url: string;
-    images: { [key: string]: Image };
+    images: TypeImage;
     title: string;
+}
+
+export interface TypeImage{
+    jpg:Image;
+    webp: Image;
 }
 
 export interface Image {

@@ -68,18 +68,62 @@
 
 </div>
 
-<div *ngIf="dataVoice">
+<div *ngIf="dataVoiceTab">
+
+    <mat-card-header class="flex-center-image">
+        <mat-card-title>Name: {{dataVoiceTab.person.name}}</mat-card-title>
+    </mat-card-header>
 
     <div class="text-center mb-2">
-        <img *ngIf="dataVoice.person.images.jpg"
+        <img *ngIf="dataVoiceTab.person.images.jpg"
              mat-card-image
              appImageBroken
              [customImg]="'./assets/images/Image_not_available.png'"
-             [src]="dataVoice.person.images.jpg.image_url"
-             [alt]="dataVoice.person.name">
-        <p>Name: {{dataVoice.person.name}}</p>
-        <p>Language: {{dataVoice.language}}</p>
-        <a [href]="dataVoice.person.url" target="_blank">More Info</a>
+             [src]="dataVoiceTab.person.images.jpg.image_url"
+             [alt]="dataVoiceTab.person.name">
+        <p>Name: {{dataVoiceTab.person.name}}</p>
+        <p>Language: {{dataVoiceTab.language}}</p>
+        <a [href]="dataVoiceTab.person.url" target="_blank">More Info</a>
     </div>
+
+</div>
+
+<div *ngIf="dataAnimeTab">
+
+    <mat-card-header class="flex-center-image">
+        <mat-card-title>Name: {{dataAnimeTab.anime.title}}</mat-card-title>
+    </mat-card-header>
+
+    <div class="text-center mb-2">
+        <img *ngIf="dataAnimeTab.anime.images.jpg"
+             mat-card-image
+             appImageBroken
+             [customImg]="'./assets/images/Image_not_available.png'"
+             [src]="dataAnimeTab.anime.images.jpg.image_url"
+             [alt]="dataAnimeTab.anime.title">
+        <p>Role: {{dataAnimeTab.role}}</p>
+        <a [href]="dataAnimeTab.anime.url" target="_blank">More Info</a>
+    </div>
+
+
+</div>
+
+<div *ngIf="datamangaTab">
+
+    <mat-card-header class="flex-center-image">
+        <mat-card-title>Name: {{dataAnimeTab.anime.title}}</mat-card-title>
+    </mat-card-header>
+
+    <div class="text-center mb-2">
+        <img *ngIf="dataAnimeTab.anime.images.jpg"
+             mat-card-image
+             appImageBroken
+             [customImg]="'./assets/images/Image_not_available.png'"
+             [src]="dataAnimeTab.anime.images.jpg.image_url"
+             [alt]="dataAnimeTab.anime.title">
+        <p>Role: {{dataAnimeTab.role}}</p>
+        <a [href]="dataAnimeTab.anime.url" target="_blank">More Info</a>
+    </div>
+
 
 </div>

@@ -5,6 +5,12 @@ a {
     padding: 0;
 }
 
+.flex-center-image {
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+}
+
 img {
     margin-top: 20px;
     margin-bottom: 20px;

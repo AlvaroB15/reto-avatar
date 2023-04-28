@@ -27,42 +27,33 @@
         </mat-tab>
 
         <mat-tab label="Voices">
+
             <div class="container-flex">
-
                 <mat-card class="card-main" *ngFor="let voice of dataCharacterDetail.data.voices">
-                    <app-info-card [dataVoice]="voice"></app-info-card>
+                    <app-info-card [dataVoiceTab]="voice"></app-info-card>
                 </mat-card>
-
-<!--                <div *ngFor="let voice of dataCharacterDetail.data.voices">-->
-<!--                    <p>Name: {{voice.person.name}}</p>-->
-<!--                    <p>Language: {{voice.language}}</p>-->
-<!--                    <div class="flex-center-image">-->
-<!--                        <img *ngIf="voice.person.images.jpg"-->
-<!--                             mat-card-image-->
-<!--                             appImageBroken-->
-<!--                             [customImg]="'./assets/images/Image_not_available.png'"-->
-<!--                             [src]="voice.person.images.jpg.image_url"-->
-<!--                             [alt]="voice.person.name">-->
-<!--                    </div>-->
-<!--                    <a [href]="voice.person.url" target="_blank">More Info</a>-->
-<!--                </div>-->
             </div>
+
         </mat-tab>
 
         <mat-tab label="Anime">
-            <div>
-                <div *ngFor="let anime of dataCharacterDetail.data.anime">
-                    <p></p>
-                </div>
+
+            <div class="container-flex">
+                <mat-card class="card-main" *ngFor="let anime of dataCharacterDetail.data.anime">
+                    <app-info-card [dataAnimeTab]="anime"></app-info-card>
+                </mat-card>
             </div>
+
         </mat-tab>
 
         <mat-tab label="Manga">
-            <div>
-                <div *ngFor="let manga of dataCharacterDetail.data.manga">
-                    <p></p>
-                </div>
+
+            <div class="container-flex">
+                <mat-card class="card-main" *ngFor="let manga of dataCharacterDetail.data.manga">
+                    <app-info-card [datamangaTab]="manga"></app-info-card>
+                </mat-card>
             </div>
+
         </mat-tab>
     </mat-tab-group>
 
